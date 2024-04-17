@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>冻梨小说解说网</title>
+    <style>
+      #overflowTest {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/22/3afc3f200af2041e6b78446fafc7c76e.jpeg);
+        background-size: 1380px 1300px;
+        background-repeat: no-repeat;
+        padding: 15px;
+        width: 1400px;
+        height: 1250px;
+        overflow: scroll; /*CSS Overflow用于滑动条*/
+        border: 1px solid #ccc;
+      }
+      #example1 {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/20/43fe7144e1d42a251cca49d53510f99e.png);
+        background-size: 2180px 2600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      #example2 {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/22/81eab76f50efae83604fbac54d5eec93.jpeg);
+        background-size: 1600px 450px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      #example3 {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/22/3afc3f200af2041e6b78446fafc7c76e.jpeg);
+        background-size: 1380px 1300px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example4 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/11/14906dd100d8934a1d92b2ec9a34d317.jpeg);
+        background-size: 680px 1100px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example5 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/11/b342f375c897762d394ef484a0986ae3.md.png);
+        background-size: 480px 1100px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example6 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/18/e8a4fe6827d4727ff036dde1b1ccf47b.jpeg);
+        background-size: 1400px 450px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example7 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/18/739b32288149a7028d6bb02aadf41b36.jpeg);
+        background-size: 440px 1450px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      pre {
+        font-size: 20px; /*字体大小*/
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial;
+        padding: 0px;
+        background: #fffffff4;
+      }
+
+      /* 头部标题 */
+      .header {
+        padding: 0px;
+        background: rgb(255, 255, 255);
+      }
+
+      .header h1 {
+        font-size: 50px;
+      }
+
+      /* 导航条 */
+      .topnav {
+        overflow: hidden;
+        background-color: #8f0202d4;
+      }
+
+      /* 导航条链接 */
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* 链接颜色修改 */
+      .topnav a:hover {
+        background-color: #fffdfd;
+        color: rgba(6, 5, 8, 0.851);
+      }
+
+      /* 创建两列 */
+      /* Left column */
+      .leftcolumn {
+        float: left;
+        width: 75%;
+      }
+
+      /* 右侧栏 */
+      .rightcolumn {
+        float: left;
+        width: 25%;
+        background-color: #0b0b0cc8;
+        padding-left: 0px;
+      }
+
+      /* 图像部分 */
+      .fakeimg {
+        background-color: #ffffff8f;
+        width: 100%;
+        padding: 0px;
+      }
+
+      /* 文章卡片效果 */
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      /* 列后面清除浮动 */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* 底部 */
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #ddd;
+        margin-top: 20px;
+      }
+
+      /* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+      @media screen and (max-width: 800px) {
+        .leftcolumn,
+        .rightcolumn {
+          width: 150%;
+          padding: 0;
+        }
+      }
+
+      /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+      @media screen and (max-width: 400px) {
+        .topnav a {
+          float: none;
+          width: 100%;
+        }
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 420px;
+        background-color: #fbfbfbd1;
+        border: 1px solid #555;
+      }
+
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      li {
+        text-align: center;
+        border-bottom: 1px solid #555;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li a.active {
+        background-color: #c1f9c3;
+        color: rgba(0, 0, 0, 0.915);
+      }
+
+      li a:hover:not(.active) {
+        background-color: #c1f9c3;
+        color: rgb(19, 1, 1);
+      }
+      ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+ul.pagination li a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+    </style>
+  </head>
+  <body>   <div
+    class="card"
+    style="height: 430px"
+    style="width: 1000px"
+   "
+   id="example6"
+  >
+    <div style="float: left; clear: both" align="center">
+      <h2>连载图书</h2>
+      <a href="https://dzcj44.github.io/ymym/5.mp4">
+        <img
+          src="https://s1.imagehub.cc/images/2024/04/17/e4bb6cf1c083320e15e7049e01d67a31.jpeg"
+          alt="示例图片"
+          width="300"
+          height="280"
+          vspace="top"
+          align="left"
+        />
+      </a>
+    </div>
+    <pre><b>
+
+
+
+   《老人与海》是美国作家海明威的一部中篇小说，主要讲述了一位老年古巴渔夫与一条巨大的马林鱼在离岸很远
+的湾流中搏斗的故事。风烛残年的老渔夫一连八十四天都没有钓到一条鱼，但他仍不肯认输，而是充满着奋斗的精神
+，终于在第八十五天钓到一条身长十八尺，体重一千五百磅的大马林鱼。
+    大鱼拖着船往海里走，老人依然死拉着不放，即使没有水，没有食物，没有武器，没有助手，左手抽筋，他也丝
+毫不灰心。经过两天两夜之后，他终于杀死大鱼，把它拴在船边。但许多鲨鱼立刻前来抢夺他的战利品。他一一地杀
+死它们，到最后只剩下一支折断的舵柄作为武器。
+    结果，大鱼仍难逃被吃光的命运，最终，老人筋疲力尽地拖回一副鱼骨头。他回到家躺在床上，只好从梦中去寻回
+那往日美好的岁月，以忘却残酷的现实。这个故事体现了海明威的人生哲学和道德理想，即人类不向命运低头，永不服
+输的斗士精神和积极向上的乐观人生态度。通过老人的形象，展现了人类在面对困境和挫折时应有的勇气和决心。
+    </b></pre>
+    <p></p>
+    <p></p>
+  </div>
+  <h2>下面是章节按钮</h2>
+  <ul class="pagination">
+    <li><a href="#">«</a></li>
+    <li><a href="#">1</a></li>
+    <li><a class="active" href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><a href="#">7</a></li>
+    <li><a href="#">»</a></li>
+  </ul>
+</body>
+</html>
