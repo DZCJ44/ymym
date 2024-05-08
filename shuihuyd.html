@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>shuihuzhuan(runoob.com)</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      video {
+        width: 100%;
+        height: auto;
+      }
+      .row:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      [class*="col-"] {
+        float: left;
+        padding: 0px;
+        width: 100%;
+      }
+      @media only screen and (min-width: 600px) {
+        .col-s-12 {
+          width: 8.33%;
+        }
+        .col-s-2 {
+          width: 16.66%;
+        }
+        .col-s-3 {
+          width: 25%;
+        }
+        .col-s-4 {
+          width: 33.33%;
+        }
+        .col-s-5 {
+          width: 41.66%;
+        }
+        .col-s-6 {
+          width: 50%;
+        }
+        .col-s-7 {
+          width: 58.33%;
+        }
+        .col-s-8 {
+          width: 66.66%;
+        }
+        .col-s-9 {
+          width: 75%;
+        }
+        .col-s-10 {
+          width: 83.33%;
+        }
+        .col-s-11 {
+          width: 91.66%;
+        }
+        .col-s-12 {
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        .col-1 {
+          width: 8.33%;
+        }
+        .col-2 {
+          width: 16.66%;
+        }
+        .col-3 {
+          width: 25%;
+        }
+        .col-4 {
+          width: 33.33%;
+        }
+        .col-5 {
+          width: 41.66%;
+        }
+        .col-6 {
+          width: 50%;
+        }
+        .col-7 {
+          width: 58.33%;
+        }
+        .col-8 {
+          width: 66.66%;
+        }
+        .col-9 {
+          width: 75%;
+        }
+        .col-10 {
+          width: 83.33%;
+        }
+        .col-11 {
+          width: 91.66%;
+        }
+        .col-12 {
+          width: 100%;
+        }
+      }
+      html {
+        font-family: "Lucida Sans", sans-serif;
+      }
+      .header {
+        background-color: #9933cc;
+        color: #ffffff;
+        padding: 0px;
+      }
+      .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .menu li {
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color: #33b5e5;
+        color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      .menu li:hover {
+        background-color: #0099cc;
+      }
+      .aside {
+        background-color: #33b5e5;
+        padding: px;
+        color: #ffffff;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      .footer {
+        background-color: #0099cc;
+        color: #ffffff;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px;
+      }
+      .div2 {
+        width: 850px;
+        height: 1700px;
+        line-height: 50px;
+        text-align: left;
+        background-color: orange;
+        position: relative;
+        top: 0px;
+        /*left: 150px;*/
+      }
+      #example1 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/26/0b726a6b135c6ace3c95ba2becab27ad.jpeg);
+        background-size: 1500px 1600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      #example2 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/26/0b726a6b135c6ace3c95ba2becab27ad.jpeg);
+        background-size: 1500px 1600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      .button {
+    background-color: #4CAF50; /* Green */
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;		;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+}
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 420px;
+        background-color: #fbfbfbd1;
+        border: 1px solid #555;
+      }
+
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      li {
+        text-align: center;
+        border-bottom: 1px solid #555;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li a.active {
+        background-color: #c1f9c3;
+        color: rgba(0, 0, 0, 0.915);
+      }
+
+      li a:hover:not(.active) {
+        background-color: #c1f9c3;
+        color: rgb(19, 1, 1);
+      }
+      ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left ;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+ul.pagination li a.active {
+    background-color: #fcfcfcce;
+    color: white;
+    border: 1px solid #fefffea1;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+hr {
+            /* 设置到边框的距离 */
+            margin-top: -30px;
+        }
+        .vi {
+            /* 设置视频占比 */
+            width: 50% ;
+            /* 设置左边距离 */
+            margin-left: 60px;
+        }
+    </style>
+  </head>
+  <body id="example1">
+      <!-- 插入图片 文字-->
+      <h2><pre><!---->
+        <!-- 图片地址 相对路径，需要自己添加视频与图片 --><div class"header" >
+<img src="https://s1.imagehub.cc/images/2024/05/08/0e811a6b8f2721bdc9433037e00e581c.md.jpeg"width="150"height="150"align="center">    <input type="text" placeholder="怎么用HTML写出网页">    <img src="https://s1.imagehub.cc/images/2024/04/28/73935a5d58ae825110b858fc8cceecf8.png" align="center"width="150"height="150"> 回到首页      <img src="https://s1.imagehub.cc/images/2024/04/28/f6dc33400dc5aa5e9c96703635dccc42.png" align="center" width="150"height="150">下载客户端     <img src="https://s1.imagehub.cc/images/2024/04/28/524258c926d423c10256cb2df4609b66.png" align="center"width="150"height="150"> 创作中心       <img src="https://s1.imagehub.cc/images/2024/04/28/3c290004cdff23bac7054bb6d9c51d20.png" align="center" width="150"height="150">消息
+
+</div>           </pre></h2><hr>
+<!-- 插入视频                                        自动播放  循环播放  视频自动静音播放  基本标签-->
+
+    <div class="row" id="example1">
+      <div class="col-6 col-s-9" id="example1">
+        <h1>水浒传</h1>
+        <p>
+            元末明初传为施耐庵创作长篇小说
+            《水浒传》是元末明初编著的长篇小说（现存刊本署名大多有施耐庵或罗贯中或两人皆有），是中国历史上第一部用白话文写成的章回体长篇小说
+        </p>
+        <video height="1400" width="400" controls>
+          <source src="https://dzcj44.github.io/ymym/shuihuzhuan.mp4" type="video/mp4" />
+          <source src="mov_bbb.ogg" type="video/ogg" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="col-3 col-s-12">
+        <div class="div2" style="height:600px;overflow-y:auto"id="example1">
+            <pre style="font-size: 20px" class="breakword"  >
+                <b>
+水浒传第一回张天师祈禳瘟疫 洪太尉误走妖魔
+故事是开始于大宋仁宗年间一场突如其来的瘟疫
+古代人没有对付瘟疫的特效药
+那皇帝能想到的办法就是派殿前太尉洪信为天使
+去往龙虎山 求天师张真人前来祈禳
+祈禳是道教中最常见的法术
+祈重点强调的是祈求
+而攘则重点强调去除
+张真人来祈禳一下
+其实就类似于替皇帝打个电报
+告诉老天这瘟疫啊  该去除了
+要说能跟老天打电报的人物
+那都得是住在深山老林 人迹罕至之处啊
+这张真人也不例外
+所以洪太尉到了龙虎山上清宫
+才得知张天师已不沾人间俗事
+腾云驾雾 行踪不定
+洪太尉心想他身负皇命
+大家伙儿殷殷期盼着
+苦苦等待着他 这必须要请到张天师
+所以洪太尉好好沐浴斋戒了一番
+背着诏书步行上山
+要说这山里光是路难走也就罢了
+洪太尉竟然还遇到了只吊睛白鹅锦毛大老虎
+还有这吊桶大小血花似的蟒蛇
+然而这毒蛇猛兽其实都没有搭理洪太尉
+只是蔑视了他一番就走开了
+这洪太尉还没来得及庆幸
+又碰到了一个小牧童 这牧童告诉他
+人家张天师早就知道皇帝要他去祈禳天下瘟疫
+早就乘贺驾云去也
+洪太尉听到便一路狼狈的奔下山
+见到上清宫道士就是一通埋怨
+可是道士却告诉洪太尉
+那个牧童就是张天师本人
+而毒蛇猛兽也都是张天师用来测试你的
+洪太尉此番受了百般惊吓
+张天师是上仙 可以不理会
+然而上清宫的道士可不敢得罪洪太尉
+于是便挽留他好好在此地修养一番
+要说龙虎山山清水秀
+正好可以游览一番
+于是洪太尉山山水水游览了许多景致
+心情也逐渐好了许多
+却说这一日洪太尉见到了一座诡异的殿
+大门上锁着胳膊粗的大锁
+还贴着密密麻麻十几道封皮儿
+再抬头一看
+上有匾额 伏魔之殿
+跟随的道士说
+这是前代老祖田氏镇所魔王之殿
+洪太尉好奇了起来
+想看看魔王究竟是什么
+道士倒是不敢得罪洪太尉
+只好打开了大门
+只见大殿黑洞洞一片
+仿佛数百年不见天日
+等有了照明 洪太尉仔细一瞧
+殿里啥也没有 就中间有一座大石碑
+下面还有只赑屃驮着
+而石碑的正面是道教天书
+洪太尉一个字也不认识
+然而转到背后
+却写了四个大字，遇洪而开
+遇洪就打开
+洪太尉心想那不就是我来打开吗？
+我是天选之人呐
+于是一下子来了精神 
+说道 不行不行 给我打开
+我倒要看看这个魔王究竟什么模样
+只见石碑赑屃全部放倒
+底下却是一个万丈深渊
+忽然间哗啦一声巨响
+如天摧地塌 岳撼山崩
+声音过后  就见一道黑气直冲而起
+散成百十道金光  向四面八方而去
+洪太尉已经是吓得目瞪口呆 茫然失措
+他不知道就这么一哆嗦
+打开的将是怎样的混世魔王
+怎样的血雨腥风
+</b></pre>
+        </div>
+      </div>
+    </div>
+    <div  class="footer" style="text-align: center" id="example1">
+      <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai1.mp4">1</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai2.mp4">2</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai3.mp4">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    
+      <a href="C:\Users\袁明\Desktop\22-1.html">
+        <img
+          src="https://s1.imagehub.cc/images/2024/04/18/90228dd51eb3ea5a8d1f55f89e6d42d4.jpeg"
+          width="60"
+          height="40"
+          vspace="top"
+        />
+    </div>
+  </body>
+</html>
