@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>冻梨小说解说网</title>
+    <style>
+      /*滚动条*/
+      #overflowTest {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/22/3afc3f200af2041e6b78446fafc7c76e.jpeg);
+        background-size: 1380px 1300px;
+        background-repeat: no-repeat;
+        padding: 15px;
+        width: 1400px;
+        height: 1250px;
+        overflow: scroll; /*CSS Overflow用于滑动条*/
+        border: 1px solid #ccc;
+      }
+      #example1 {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/20/43fe7144e1d42a251cca49d53510f99e.png);
+        background-size: 2180px 2600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      #example2 {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/22/81eab76f50efae83604fbac54d5eec93.jpeg);
+        background-size: 1600px 450px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      #example3 {
+        background-image: url(https://s1.imagehub.cc/images/2024/03/22/3afc3f200af2041e6b78446fafc7c76e.jpeg);
+        background-size: 1380px 1300px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example4 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/11/14906dd100d8934a1d92b2ec9a34d317.jpeg);
+        background-size: 680px 1100px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example5 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/11/b342f375c897762d394ef484a0986ae3.md.png);
+        background-size: 480px 1100px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example6 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/18/e8a4fe6827d4727ff036dde1b1ccf47b.jpeg);
+        background-size: 1400px 450px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example7 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/18/739b32288149a7028d6bb02aadf41b36.jpeg);
+        background-size: 440px 1450px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      #example8 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/18/fc3fc75720337c5bca4ae61ab1d0ed1e.jpeg);
+        background-size: 440px 230px;
+        background-repeat: no-repeat;
+        padding: 15px;
+      }
+      pre {
+        font-size: 20px; /*字体大小*/
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial;
+        padding: 0px;
+        background: #fffffff4;
+      }
+
+      /* 头部标题 */
+      .header {
+        padding: 0px;
+        background: rgb(255, 255, 255);
+      }
+
+      .header h1 {
+        font-size: 50px;
+      }
+
+      /* 导航条 */
+      .topnav {
+        overflow: hidden;
+        background-color: #8f0202d4;
+      }
+
+      /* 导航条链接 */
+      .topnav a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      /* 链接颜色修改 */
+      .topnav a:hover {
+        background-color: #fffdfd;
+        color: rgba(6, 5, 8, 0.851);
+      }
+
+      /* 创建两列 */
+      /* Left column */
+      .leftcolumn {
+        float: left;
+        width: 75%;
+      }
+
+      /* 右侧栏 */
+      .rightcolumn {
+        float: left;
+        width: 25%;
+        background-color: #0b0b0cc8;
+        padding-left: 0px;
+      }
+
+      /* 图像部分 */
+      .fakeimg {
+        background-color: #ffffff8f;
+        width: 100%;
+        padding: 0px;
+      }
+
+      /* 文章卡片效果 */
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 40px;
+      }
+
+      /* 列后面清除浮动 */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* 底部 */
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #ddd;
+        margin-top: 20px;
+      }
+
+      /* 响应式布局 - 屏幕尺寸小于 800px 时，两列布局改为上下布局 */
+      @media screen and (max-width: 800px) {
+        .leftcolumn,
+        .rightcolumn {
+          width: 150%;
+          padding: 0;
+        }
+      }
+
+      /* 响应式布局 -屏幕尺寸小于 400px 时，导航等布局改为上下布局 */
+      @media screen and (max-width: 400px) {
+        .topnav a {
+          float: none;
+          width: 100%;
+        }
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 420px;
+        background-color: #fbfbfbd1;
+        border: 1px solid #555;
+      }
+
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      li {
+        text-align: center;
+        border-bottom: 1px solid #555;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li a.active {
+        background-color: #c1f9c3;
+        color: rgba(0, 0, 0, 0.915);
+      }
+
+      li a:hover:not(.active) {
+        background-color: #c1f9c3;
+        color: rgb(19, 1, 1);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header" class="row" id="example1">
+      <h1>冻梨小说解说网</h1>
+      <img
+        src="https://s1.imagehub.cc/images/2024/03/20/1591a85317982826708182742c5b0e77.jpeg"
+        alt="Pulpit rock"
+        width="1900"
+        height="450"
+        width:100%;
+        max-width:100%;
+        object-fit:none;
+      />
+    </div>
+
+    <div class="topnav">
+      <a
+        href="https://www.runoob.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >首页</a
+      >
+      <a
+        href="https://www.runoob.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >分类</a
+      >
+      <a
+        href="https://www.runoob.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >关于我们</a
+      >
+      <a
+        href="https://www.runoob.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        >注册 登录</a
+      >
+    </div>
+
+    <div>
+      <div class="leftcolumn" class="row" id="example2">
+        <div class="card" id="overflowTest">
+          <h2>推荐图书</h2>
+          <p>冻梨小说制作组——“穿越时空的故事，在这里等你”</p>
+          <div class="fakeimg" style="height: 1130px">
+            <a
+              href="https://dzcj44.github.io/ymym/3.mp4"
+              width="300"
+              height="280"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/52ec975492c2e434f72dcfe306f2553b.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+
+            <a
+              href="https://h5.qzone.qq.com/page/photo?init=photo.v7/common/viewer2/index&picKey=NR8AVjZiQ2dBek5qazROamMzTWpZNGJBTDdaVVAqTURzIQcAcGhvdG9neg!!&ownerUin=3698677268&appid=4&topicId=V50B2rMq3PsY6q2GM7dB2OKzKN1TVSTR_NR8AVjZiQ2dBek5qazROamMzTWpZNGJBTDdaVVAqTURzIQcAcGhvdG9neg!!_0_0&pre=https%3A%2F%2Fm.qpic.cn%2Fpsc%3F%2FV50B2rMq3PsY6q2GM7dB2OKzKN1TVSTR%2FruAMsa53pVQWN7FLK88i5gw90A5D2jAMbK3E3HXCNQ9yUUwSS.87rPQvFg.podfLXi5.ENvkNv.oib46r3nzvHJvJjlVbOWBnUD8yccSb3U!%2Fc%26bo%3DoAU4BAAAAAABF6k!&useqzfl=1&useinterface=1&noCloseBtn=0&inqq=1"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/60f45e4c9eea938e628bfba2d271368f.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+
+            <a
+              href="https://dzcj44.github.io/ymym/h2.mp4"
+              width="300"
+              height="280"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/dcd83fe068be61fdc78558eefab63443.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <a
+              href="https://v6-default.ixigua.com/4299d26d36175998360f98ba231c86f6/65faeee0/video/tos/cn/tos-cn-ve-15c001-alinc2/oscAEBDc7Qnf9fgzBcTd8HmAbgDBVlRAZNgP4u/?a=2333&ch=0&cr=0&dr=0&lr=unwatermarked&net=5&cd=0%7C0%7C0%7C0&cv=1&br=466&bt=466&cs=0&ds=4&ft=KabkaPPT2_5jH6WH6BRfuOhi3lM5SdTHKkN7TGbL&mime_type=video_mp4&qs=0&rc=ZTllaDw3ZjU6ZjM2PDs6N0BpanZnbTs6Zm12bzMzNGkzM0AwYjZiMWItXmExXmI0M2E1YSNsYmQwcjRvLWxgLS1kLTBzcw%3D%3D&btag=e00030000&dy_q=1710939813&feature_id=46a7bb47b4fd1280f3d3825bf2b29388&l=2024032021033233F53871885604B9FFB5"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/18ee983988c9f08c042c0d3fb1c94d36.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <pre><b>
+        《海底两万里》                  《朝花夕拾》                    《童年》                      《小妇人》
+            </b> </pre>
+            <a
+              href="https://v9-default.ixigua.com/2193404d8e0b5bcabccf60f8a2801d13/65faee82/video/tos/cn/tos-cn-ve-15c001-alinc2/o0AAQPpYrOlEtBlLMYzArIxKNGE9hffgp9MAOr/?a=2333&ch=0&cr=0&dr=0&lr=unwatermarked&net=5&cd=0%7C0%7C0%7C0&cv=1&br=321&bt=321&cs=0&ds=3&ft=KabkaPPT2_5jH6WH6BRfuGji3lM5SdTHKkN7TGbL&mime_type=video_mp4&qs=0&rc=O2Y3ZDdkZGlnOWc0NTU4Z0BpMzxsZGY6ZnIzbjMzNGkzM0A1Xi41MjUxX2ExLi0xLmJfYSM0a200cjRvc2BgLS1kLWFzcw%3D%3D&btag=e00030000&dy_q=1710939978&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=20240320210618B5EAA960A19227B65C97"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/5752bba47f7d43201690c6b48fdf8c96.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <a
+              href="https://v26-default.ixigua.com/a06bed3b4be7228905f2488c6d3c3f63/65faee70/video/tos/cn/tos-cn-ve-15c001-alinc2/oMxVMYgEhTzAiNQfrXBLUyclEIIAeAQ1It1Ntr/?a=2333&ch=0&cr=0&dr=0&lr=unwatermarked&net=5&cd=0%7C0%7C0%7C0&cv=1&br=304&bt=304&cs=0&ds=3&ft=KabkaPPT2_5jH6WH6BRfu3ji3lM5SdTHKkN7TGbL&mime_type=video_mp4&qs=0&rc=NGQ8NjtnNjZoNDo4NzppZEBpM2c1NTc6ZjxxbjMzNGkzM0BhNTQ1XzM2X18xYS4zMDJgYSMzam8xcjRvMl5gLS1kLWFzcw%3D%3D&btag=e00028000&dy_q=1710940019&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202403202106594ECD917F595BB5BA9E34"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/4779bf3133886f79b21901fa1208752c.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <a
+              href="https://v6-default.ixigua.com/2f66340c61dda0a21d70ae9e4106a67b/65faeeb2/video/tos/cn/tos-cn-ve-15c001-alinc2/o8zgyYGoAO0AIMNyeUiBAhhc2hEBIQfxXULmtz/?a=2333&ch=0&cr=0&dr=0&lr=unwatermarked&net=5&cd=0%7C0%7C0%7C0&cv=1&br=345&bt=345&cs=0&ds=3&ft=KabkaPPT2_5jH6WH6BRfu2ai3lM5SdTHKkN7TGbL&mime_type=video_mp4&qs=0&rc=aWlkPGU6O2g1OzlmZmhlM0BpM3I5ZmY6Zm5rbjMzNGkzM0BiMGI1YC5fXi0xNTVgLjQ2YSNlL2g0cjRfaGxgLS1kLWFzcw%3D%3D&btag=e00030000&dy_q=1710940053&feature_id=f0150a16a324336cda5d6dd0b69ed299&l=202403202107338A8B9E6252E1E6BCD047"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/c037f27a84ce0e6e60e32fc8f22b937c.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <a
+              href="https://dzcj44.github.io/ymym/6.mp4"
+              width="300"
+              height="280"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/4f62a8575f8bb0c8aea6f8263ee75545.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <pre><b>
+      《贪婪的多巴胺》                 《认知天性》             《天才在左，疯子在右》               《小王子》</b></pre>
+            <a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/0b134a7aa382088bf3069017135bc5fa.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/4b01b66e1e630f56925a5b36ae75279d.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/730b06ce5bc219c097843d1d625f59c8.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a
+              href="https://v26-default.ixigua.com/cacd627fd8186196027c885851aa9110/65faec97/video/tos/cn/tos-cn-ve-15c001-alinc2/oMBk9dgKbAgCeFSfAn9lLrBsyDAN8AzqrT6RZF/?a=2333&br=320&bt=320&btag=e00030000&cd=0%7C0%7C0%7C0&ch=0&cr=0&cs=0&cv=1&dr=0&ds=3&dy_q=1710939408&dy_va_biz_cert=&feature_id=f0150a16a324336cda5d6dd0b69ed299&ft=KabkaPPT2_5jH6WH6BRfuNZi3lM5SdTHKkN7TGbL&l=20240320205648E54DBE0F35F166B6B2D5&lr=unwatermarked&mime_type=video_mp4&net=5&qs=0&rc=OGRpPDZpaDZmPDRlaWk7OUBpajo0ZjQ6ZnltbjMzNGkzM0AtLmExMGIzNmMxMmAuYi80YSNhaWphcjRfL2hgLS1kLWFzcw%3D%3D"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/20/5c7d8c967334027151c08d7b3ed10822.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <pre><b>          《白夜行》                 《月亮与六便士》             《钢铁是怎样练成的》                   《活着》</b></pre>
+            <a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/5b90a2b00108dd80ef21604eb7251b7b.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/7dc806e58ff3c5e166eca440e1a8b69d.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/e4854330b0106f93b5868b6b16abd3d7.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/48749f3cc7b15436d2988a68140a5e5e.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <pre><b>          《城南旧事》                 《人间值得》             《橘子不是唯一的水果》              《追风筝的人》</b></pre>
+            <a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/78a0df7e9ad18e4f9cd14977ad9621a7.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/81ef8be162f913810f38d24e78f5d647.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/a78db7817286af37dcda660f88f74bc6.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/5b47784c09c8d8222e5f5cce8c690179.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <pre><b>          《人间失格》                 《病隙碎笔》                   《小桔灯》                   《仲夏夜之梦》</b></pre>
+            <a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/b1491fc321cc6bdbf7d646e3e01ac019.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/9c0c49802a94f5039ccaa4245f06113d.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/ab70f645a3724ac1f4adf74070049a66.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              /> </a
+            ><a href="https://www.example.com">
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/06/3fa82a863f260d1c4517ca86924d2edd.md.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+              />
+            </a>
+            <pre><b>          《羊脂球》               《太阳下山有月光》                 《在人间》                    《长安的荔枝》</b></pre>
+          </div>
+          <p></p>
+          <p></p>
+        </div>
+        <div class="card">
+          <pre><b>                                                                             “读书是旅行，探索未知的世界。”——冻梨小说制作组卓晶</b></pre>
+        </div>
+        <div
+          class="card"
+          style="height: 430px"
+          style="width: 1000px"
+         id="example6"
+        >
+          <div style="float: left; clear: both" align="center">
+            <h2>精品图书</h2>
+            <a href="https://dzcj44.github.io/ymym/5.mp4">
+              <img
+                src="https://s1.imagehub.cc/images/2024/03/27/82adfdf3741bc77e74b61f3ce02cbabd.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+                vspace="top"
+                align="left"
+              />
+            </a>
+          </div>
+          <pre><b>
+
+
+    这本书记录了乔布斯传奇的一生，更集中体现了乔布斯为世人留下的宝贵经验和思想。作者沃尔特·艾萨克森是
+美国著名的传记作家，曾写过富兰克林、爱因斯坦等人的传记，本书也是在作者被乔布斯本人多次邀请之下才开始
+写作的。作者在成书期间40多次与乔布斯进行正式、非正式谈话，并对于乔布斯的亲人、同事、对手甚至前女友等
+人进行了采访，因而我认为这本书相对客观地记录了乔布斯的一生。
+    或许从普世的观念上看，乔布斯的性格有一些缺陷，比如对女儿丽萨的抛弃、简单地将人分为天才和傻子两类
+、对于自己不满意的地方或人毫不客气地尖锐指责，以及书中多处提到的“现实扭曲力场”......这样的激进性格同
+样也体现在他对完美产品的极致追求中，正是这样的追求，塑造了乔布斯传奇、但也跌宕起伏的一生。
+    终其一生，乔布斯都在不断突破产品的边界，将“创新”一词发挥得淋漓尽致，他开创了一个时代，为世人留下
+了如此之多的经典产品，也留下了一家传世的公司。透过这样一本传记，我们不仅能够看到一个前瞻的完美主义者，
+更重要的是乔布斯身上所散发的独立精神和自由灵魂的气息，在某些方面，他真正做到了像上帝的心灵那样无拘无
+束，或许这就是他一生推崇的“人文和科技交汇”中属于人文的一部分。
+          </b></pre>
+          <p></p>
+          <p></p>
+        </div>
+        <div
+        class="card"
+        style="height: 430px"
+        style="width: 1000px"
+       id="example6"
+      >
+        <div style="float: left; clear: both" align="center">
+          <h2>四大名著</h2>
+          <pre><b>
+ 《三国演义》                  《红楼梦》                    《水浒传》                      《西游记》
+                </b> </pre>
+          <a
+          href="https://dzcj44.github.io/ymym/sanguoyd.html.html"
+          width="300"
+          height="260"
+        >
+          <img
+            src="https://s1.imagehub.cc/images/2024/05/09/b45cedcfc65477416930d8f9fde476bd.jpeg"
+            alt="示例图片"
+            width="300"
+            height="260"
+          />
+        </a>
+
+        <a
+          href="https://dzcj44.github.io/ymym/houlongmengyd.html"
+        >
+          <img
+            src="https://s1.imagehub.cc/images/2024/05/09/e760a1931c33cca48413b98e27b0322d.jpeg"
+            alt="示例图片"
+            width="300"
+            height="260"
+          />
+        </a>
+
+        <a
+          href="https://dzcj44.github.io/ymym/shuihuyd.html"
+          width="300"
+          height="260"
+        >
+          <img
+            src="https://s1.imagehub.cc/images/2024/05/09/77a045ef28d0390caa8062c8abb08d88.jpeg"
+            alt="示例图片"
+            width="300"
+            height="260"
+          />
+        </a>
+        <a
+          href="https://v6-default.ixigua.com/4299d26d36175998360f98ba231c86f6/65faeee0/video/tos/cn/tos-cn-ve-15c001-alinc2/oscAEBDc7Qnf9fgzBcTd8HmAbgDBVlRAZNgP4u/?a=2333&ch=0&cr=0&dr=0&lr=unwatermarked&net=5&cd=0%7C0%7C0%7C0&cv=1&br=466&bt=466&cs=0&ds=4&ft=KabkaPPT2_5jH6WH6BRfuOhi3lM5SdTHKkN7TGbL&mime_type=video_mp4&qs=0&rc=ZTllaDw3ZjU6ZjM2PDs6N0BpanZnbTs6Zm12bzMzNGkzM0AwYjZiMWItXmExXmI0M2E1YSNsYmQwcjRvLWxgLS1kLTBzcw%3D%3D&btag=e00030000&dy_q=1710939813&feature_id=46a7bb47b4fd1280f3d3825bf2b29388&l=2024032021033233F53871885604B9FFB5"
+        >
+          <img
+            src="https://s1.imagehub.cc/images/2024/05/09/e1d717e980a512329e864e67827da420.jpeg"
+            alt="示例图片"
+            width="300"
+            height="260"
+          />
+        </a>
+        </div>
+        <p></p>
+        <p></p>
+      </div>
+        <div class="card" style="height: 430px" style="width: 1000px" id="example6">
+          <div style="float: left; clear: both" align="center">
+            <h2>英文图书</h2>
+            <a
+              href="https://dzcj44.github.io/ymym/freecompress-jiazhouchuanshuo.mp4"
+            >
+              <img
+                src="https://s1.imagehub.cc/images/2024/04/10/76741ff7a7fb2cea69195e0fe8ffe4ba.th.jpeg"
+                alt="示例图片"
+                width="300"
+                height="280"
+                vspace="top"
+                align="left"
+              />
+            </a>
+          </div>
+          <pre><b>
+
+
+    这本小说主要讲述了年轻人查尔斯·温特沃斯（Charles Winters）在加州的经历。故事发生在美国西部的加州，
+讲述了查尔斯·温特沃斯来到加州寻找一份工作，寻找自己的命运以及向那些过去赤贫的人证明自己的价值。他经历了
+许多奇怪的事件和遇到了许多有趣的人物，包括农民、商人、一头从马厩走出来的黑熊等等。在这本小说中，马克·吐
+温通过幽默而生动的笔触，描绘了当时的加州社会生活以及人们的心理状态。他对美国社会的讽刺和批评也随处可见，
+并且揭示了人性的复杂和社会问题的深层次根源。他在这个小说中塑造了一系列鲜明的人物形象，并通过这些人物的互
+动，反映了美国社会的各种问题，包括社会阶层的分化、贫富悬殊、欲望无限等问题。
+    总的来说，《马克吐温加州传说》讲述了一个勇敢的年轻人在新兴的美国社会中追求自己的梦想。马克·吐温通过
+讽刺和幽默，暴露了学校教育和社会教育的缺陷，强调了个人的价值和自由精神的重要性，体现了美国人所崇尚的自由
+民主和人权价值观。
+          </b></pre>
+          <p></p>
+          <p></p>
+        </div>
+        <div
+        class="card"
+        style="height: 430px"
+        style="width: 1000px"
+       "
+       id="example6"
+      >
+        <div style="float: left; clear: both" align="center">
+          <h2>连载图书</h2>
+          <a href="https://dzcj44.github.io/ymym/laorenyd.html">
+            <img
+              src="https://s1.imagehub.cc/images/2024/04/17/e4bb6cf1c083320e15e7049e01d67a31.jpeg"
+              alt="示例图片"
+              width="300"
+              height="280"
+              vspace="top"
+              align="left"
+            />
+          </a>
+        </div>
+        <pre><b>
+
+   《老人与海》是美国作家海明威的一部中篇小说，主要讲述了一位老年古巴渔夫与一条巨大的马林鱼在离岸很远
+的湾流中搏斗的故事。风烛残年的老渔夫一连八十四天都没有钓到一条鱼，但他仍不肯认输，而是充满着奋斗的精神
+，终于在第八十五天钓到一条身长十八尺，体重一千五百磅的大马林鱼。大鱼拖着船往海里走，老人依然死拉着不放，
+即使没有水，没有食物，没有武器，没有助手，左手抽筋，他也丝毫不灰心。经过两天两夜之后，他终于杀死大鱼，
+把它拴在船边。但许多鲨鱼立刻前来抢夺他的战利品。他一一地杀死它们，到最后只剩下一支折断的舵柄作为武器。
+    结果，大鱼仍难逃被吃光的命运，最终，老人筋疲力尽地拖回一副鱼骨头。他回到家躺在床上，只好从梦中去寻回
+那往日美好的岁月，以忘却残酷的现实。这个故事体现了海明威的人生哲学和道德理想，即人类不向命运低头，永不服
+输的斗士精神和积极向上的乐观人生态度。通过老人的形象，展现了人类在面对困境和挫折时应有的勇气和决心。
+        </b></pre>
+        <p></p>
+        <p></p>
+      </div> <div class="card" style="height: 430px" style="width: 1000px" id="example6">
+        <div style="float: left; clear: both" align="center">
+          <h2>英文图书</h2>
+          <a
+            href="https://dzcj44.github.io/ymym/aimeiliheliequan.mp4"
+          >
+            <img
+              src="https://s1.imagehub.cc/images/2024/04/18/a86beb4543e674f15cd857f75f9d2844.jpeg"
+              alt="示例图片"
+              width="300"
+              height="280"
+              vspace="top"
+              align="left"
+            />
+          </a>
+        </div>
+        <pre><b>
+
+
+    艾美丽是一个善良的女孩，她在森林里发现了受伤的猎犬马克斯。她决定救助马克斯，并把他带回家照顾。马
+克斯在艾美丽的照料下逐渐康复，他们之间建立起了深厚的友谊。在接下来的日子里，艾美丽和马克斯一起探索森
+林，分享彼此的喜怒哀乐。他们相互依赖、互相支持，共同度过每一个季节。他们的友谊成为彼此生活中的一道亮丽
+风景，散发着温暖与力量。艾美丽和马克斯的故事感人至深，让人领悟到真正友谊的珍贵和重要。他们的相处也让人
+们意识到，互相关怀、支持是如此重要，在困难时刻给予彼此力量，一同享受生活的美好。
+        </b></pre>
+        <p></p>
+        <p></p>
+      </div>
+        <div class="card">
+          <p>“读书是旅行，探索未知的世界。”</p>
+        </div>
+      </div>
+      <div class="rightcolumn" class="row" id="example2">
+        <div  >
+            <a href="C:\Users\袁明\Desktop\denglu.html">
+              <img src="https://s1.imagehub.cc/images/2024/04/18/280f594830d86843e614b6f155f779e1.jpeg" 
+              width="440px"
+              height="320px">
+            </a>                     
+
+          </div>
+        <div class="card" style="height: 1100px" id="example5">
+          <h1>图书分类</h1>
+          <pre>   </pre>
+          <pre>   </pre>
+          <pre>   </pre>
+          <pre>   </pre>
+          <pre>   </pre>
+          <pre>   </pre>
+          <pre>   </pre>
+          <ul>
+            <li><a href="#home">科幻小说</a></li>
+            <li><a href="#home">散文小说</a></li>
+            <li><a href="#home">英文小说</a></li>
+            <li><a href="#home">散文小说</a></li>
+            <li><a href="#home">生活小说</a></li>
+            <li><a href="#home">美文小说</a></li>
+            <li><a href="#home">励志小说</a></li>
+            <li><a href="#home">中国名著</a></li>
+            <li><a href="#home">外国名著</a></li>
+            <li><a href="#home">连载小说</a></li>
+            <li><a href="#home">历史小说</a></li>
+            <li><a href="#home">神仙小说</a></li>
+            <li><a href="#home">悬疑小说</a></li>
+            <li><a href="#home">历史传说</a></li>
+            <li><a href="#home">言情小说</a></li>
+            <li><a href="#home">校园小说</a></li>
+            <li><a href="#home">军事小说</a></li>
+            <li><a href="#home">青春小说</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div  style="height: 1000px" id="example7">
+      <h1>图书排行榜</h1>
+      <table 
+      align="right"
+      border="1px"
+      cellpadding="0"
+      cellspacing="0"
+      width="450px"
+      id="example7"
+    >
+      <tr>
+        <th>封面</th>
+        <th>书名</th>
+        <th>作者</th>
+        <th>评分</th>
+        <th>类型</th>
+        <th>语言</th>
+      </tr>
+      <tr>
+        <td>
+          <a href="C:\Users\袁明\Desktop\laorenyuhai.html">
+            <img
+              src="https://s1.imagehub.cc/images/2024/04/17/e4bb6cf1c083320e15e7049e01d67a31.jpeg"
+              height="100px"
+            />
+        </td>
+        <td>《老人与海》</td>
+        <td>米勒尔·海明威</td>
+        <td>9.9</td>
+        <td>励志小说</td>
+        <td>英语解说</td>
+      </tr>
+      <tr>
+        <td>
+          <a
+          href="https://dzcj44.github.io/ymym/freecompress-jiazhouchuanshuo.mp4"
+        >
+          <img
+            src="https://s1.imagehub.cc/images/2024/04/10/76741ff7a7fb2cea69195e0fe8ffe4ba.th.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《加州故事》</td>
+        <td>马克吐温</td>
+        <td>9.8</td>
+        <td>冒险小说</td>
+        <td>英语解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/03/20/60f45e4c9eea938e628bfba2d271368f.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《朝花夕拾》</td>
+        <td>鲁迅</td>
+        <td>9.8</td>
+        <td>散文小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/03/20/dcd83fe068be61fdc78558eefab63443.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《童年》</td>
+        <td>高尔基</td>
+        <td>9.7</td>
+        <td>自传体小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/03/20/5752bba47f7d43201690c6b48fdf8c96.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《贪婪的多巴胺》</td>
+        <td>迈克尔·E.郎</td>
+        <td>9.7</td>
+        <td>心理学书籍</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/03/20/4779bf3133886f79b21901fa1208752c.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《认知天性》</td>
+        <td>彼得布朗</td>
+        <td>9.6</td>
+        <td>心理学书籍</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/03/20/4f62a8575f8bb0c8aea6f8263ee75545.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《小王子》</td>
+        <td>扶华安托万</td>
+        <td>9.6</td>
+        <td>幻想小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/03/20/4b01b66e1e630f56925a5b36ae75279d.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《月亮与六便士》</td>
+        <td>威廉·萨默赛特·毛姆</td>
+        <td>9.5</td>
+        <td>现实主义小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/03/20/5c7d8c967334027151c08d7b3ed10822.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《活着》</td>
+        <td>余华</td>
+        <td>9.5</td>
+        <td>现实生活小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/04/06/5b90a2b00108dd80ef21604eb7251b7b.md.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《城南旧事》</td>
+        <td>林海音</td>
+        <td>9.4</td>
+        <td>自传体短篇小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/04/06/7dc806e58ff3c5e166eca440e1a8b69d.md.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《人间值得》</td>
+        <td>中村恒子</td>
+        <td>9.3</td>
+        <td>心理小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/04/06/e4854330b0106f93b5868b6b16abd3d7.md.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《橘子不是唯一的水果》</td>
+        <td>珍妮特·温特森</td>
+        <td>9.3</td>
+        <td>长篇小说</td>
+        <td>中文解说</td>
+      </tr>
+      <tr>
+        <td>
+          <img
+            src="https://s1.imagehub.cc/images/2024/04/06/78a0df7e9ad18e4f9cd14977ad9621a7.md.jpeg"
+            height="100px"
+          />
+        </td>
+        <td>《人间失格》</td>
+        <td>太宰治</td>
+        <td>9.2</td>
+        <td>半自传体</td>
+        <td>中文解说</td>
+      </tr>
+    </table>
+    </div>
+  </body>
+</html>
