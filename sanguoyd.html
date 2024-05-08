@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>shuihuzhuan(runoob.com)</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      video {
+        width: 100%;
+        height: auto;
+      }
+      .row:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      [class*="col-"] {
+        float: left;
+        padding: 0px;
+        width: 100%;
+      }
+      @media only screen and (min-width: 600px) {
+        .col-s-12 {
+          width: 8.33%;
+        }
+        .col-s-2 {
+          width: 16.66%;
+        }
+        .col-s-3 {
+          width: 25%;
+        }
+        .col-s-4 {
+          width: 33.33%;
+        }
+        .col-s-5 {
+          width: 41.66%;
+        }
+        .col-s-6 {
+          width: 50%;
+        }
+        .col-s-7 {
+          width: 58.33%;
+        }
+        .col-s-8 {
+          width: 66.66%;
+        }
+        .col-s-9 {
+          width: 75%;
+        }
+        .col-s-10 {
+          width: 83.33%;
+        }
+        .col-s-11 {
+          width: 91.66%;
+        }
+        .col-s-12 {
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        .col-1 {
+          width: 8.33%;
+        }
+        .col-2 {
+          width: 16.66%;
+        }
+        .col-3 {
+          width: 25%;
+        }
+        .col-4 {
+          width: 33.33%;
+        }
+        .col-5 {
+          width: 41.66%;
+        }
+        .col-6 {
+          width: 50%;
+        }
+        .col-7 {
+          width: 58.33%;
+        }
+        .col-8 {
+          width: 66.66%;
+        }
+        .col-9 {
+          width: 75%;
+        }
+        .col-10 {
+          width: 83.33%;
+        }
+        .col-11 {
+          width: 91.66%;
+        }
+        .col-12 {
+          width: 100%;
+        }
+      }
+      html {
+        font-family: "Lucida Sans", sans-serif;
+      }
+      .header {
+        background-color: #9933cc;
+        color: #ffffff;
+        padding: 0px;
+      }
+      .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .menu li {
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color: #33b5e5;
+        color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      .menu li:hover {
+        background-color: #0099cc;
+      }
+      .aside {
+        background-color: #33b5e5;
+        padding: px;
+        color: #ffffff;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      .footer {
+        background-color: #0099cc;
+        color: #ffffff;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px;
+      }
+      .div2 {
+        width: 850px;
+        height: 1700px;
+        line-height: 50px;
+        text-align: left;
+        background-color: orange;
+        position: relative;
+        top: 0px;
+        /*left: 150px;*/
+      }
+      #example1 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/26/0b726a6b135c6ace3c95ba2becab27ad.jpeg);
+        background-size: 1500px 1600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      #example2 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/26/0b726a6b135c6ace3c95ba2becab27ad.jpeg);
+        background-size: 1500px 1600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      .button {
+    background-color: #4CAF50; /* Green */
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;		;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+}
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 420px;
+        background-color: #fbfbfbd1;
+        border: 1px solid #555;
+      }
+
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      li {
+        text-align: center;
+        border-bottom: 1px solid #555;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li a.active {
+        background-color: #c1f9c3;
+        color: rgba(0, 0, 0, 0.915);
+      }
+
+      li a:hover:not(.active) {
+        background-color: #c1f9c3;
+        color: rgb(19, 1, 1);
+      }
+      ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left ;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+ul.pagination li a.active {
+    background-color: #fcfcfcce;
+    color: white;
+    border: 1px solid #fefffea1;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+hr {
+            /* 设置到边框的距离 */
+            margin-top: -30px;
+        }
+        .vi {
+            /* 设置视频占比 */
+            width: 50% ;
+            /* 设置左边距离 */
+            margin-left: 60px;
+        }
+    </style>
+  </head>
+  <body id="example1">
+      <!-- 插入图片 文字-->
+      <h2><pre><!---->
+        <!-- 图片地址 相对路径，需要自己添加视频与图片 --><div class"header" >
+<img src="https://s1.imagehub.cc/images/2024/05/08/0e811a6b8f2721bdc9433037e00e581c.md.jpeg"width="150"height="150"align="center">    <input type="text" placeholder="怎么用HTML写出网页">    <img src="https://s1.imagehub.cc/images/2024/04/28/73935a5d58ae825110b858fc8cceecf8.png" align="center"width="150"height="150"> 回到首页      <img src="https://s1.imagehub.cc/images/2024/04/28/f6dc33400dc5aa5e9c96703635dccc42.png" align="center" width="150"height="150">下载客户端     <img src="https://s1.imagehub.cc/images/2024/04/28/524258c926d423c10256cb2df4609b66.png" align="center"width="150"height="150"> 创作中心       <img src="https://s1.imagehub.cc/images/2024/04/28/3c290004cdff23bac7054bb6d9c51d20.png" align="center" width="150"height="150">消息
+
+</div>           </pre></h2><hr>
+<!-- 插入视频                                        自动播放  循环播放  视频自动静音播放  基本标签-->
+
+    <div class="row" id="example1">
+      <div class="col-6 col-s-9" id="example1">
+        <h1>《三国演义》</h1>
+        <p>
+            《三国演义》，以描写战争为主，描述了东汉末年的群雄割据混战和魏、
+蜀、吴三国之间的政治和军事斗争，最终司马炎一统三国，建立晋朝的故事。
+        </p>
+        <video height="1400" width="400" controls>
+          <source src="https://dzcj44.github.io/ymym/shuihuzhuan.mp4" type="video/mp4" />
+          <source src="mov_bbb.ogg" type="video/ogg" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="col-3 col-s-12">
+        <div class="div2" style="height:600px;overflow-y:auto"id="example1">
+            <pre style="font-size: 20px" class="breakword"  >
+                <b>
+在东汉末年 朝政衰败 再加上连年灾荒
+
+老百姓生活在水深火热之中
+
+巨鹿有个名叫张角的人 他以法术和咒语等方式
+
+到处给人治病 许多人都归附他 对他十分信奉
+
+
+随着追随他的人越来越多
+
+
+张角便私自创立了“太平道” 自封为“大贤良师
+”
+
+
+还秘密地传播一些鼓动人心的话
+
+
+说“苍天已死 黄天当立 岁在甲子 天下大吉”
+
+
+张角还派出他的弟子们 在四面八方散播这些言论
+
+10
+00:00:36,700 --> 00:00:39,633
+以吸引更多的人加入他们的行列
+
+11
+00:00:39,633 --> 00:00:43,900
+没过多久 全国就有几十万民众响应张角
+
+12
+00:00:43,900 --> 00:00:47,300
+他们都头裹黄巾 被称为“黄巾军”
+
+13
+00:00:47,300 --> 00:00:51,533
+黄巾军到处烧杀抢掠 声势十分浩大
+
+14
+00:00:51,533 --> 00:00:56,500
+汉灵帝得知后 惊恐万分 连忙下令各地加紧防备
+
+15
+00:00:56,500 --> 00:00:58,733
+并派中郎将卢植
+
+16
+00:00:58,733 --> 00:01:03,566
+皇甫嵩 朱儁等人分别率领官军去征讨黄巾军
+
+17
+00:01:03,566 --> 00:01:07,766
+在这个动荡的时代 有三个英雄豪杰走到了一起
+
+18
+00:01:07,766 --> 00:01:10,966
+他们分别是刘备 关羽和张飞
+
+19
+00:01:10,966 --> 00:01:13,900
+刘备是中山靖王刘胜的后代
+
+20
+00:01:13,900 --> 00:01:18,633
+虽然家境贫寒 但他心怀大志 为人宽厚仁义；
+
+21
+00:01:18,633 --> 00:01:22,900
+关羽身长九尺 髯长二尺 面如重枣
+
+22
+00:01:22,900 --> 00:01:27,533
+丹凤眼 卧蚕眉 相貌堂堂 威风凛凛；
+
+23
+00:01:27,533 --> 00:01:31,533
+张飞则是个勇猛无比的壮汉 声若洪钟
+
+24
+00:01:31,533 --> 00:01:36,200
+有一天 刘备在看榜文时 遇到了关羽和张飞
+
+25
+00:01:36,200 --> 00:01:40,766
+他们三人志同道合 都有着为国为民除害的志向
+
+26
+00:01:40,766 --> 00:01:43,533
+于是决定在桃园结义为兄弟
+
+27
+00:01:43,533 --> 00:01:48,333
+他们焚香礼拜 对天盟誓 不求同年同月同日生
+
+28
+00:01:48,333 --> 00:01:50,933
+但求同年同月同日死
+
+29
+00:01:50,933 --> 00:01:55,033
+从此 他们三人成为了生死与共的好兄弟
+
+30
+00:01:55,033 --> 00:01:58,000
+一起踏上了征战天下的征程
+
+31
+00:01:58,000 --> 00:02:00,333
+在与黄巾军的战斗中
+
+32
+00:02:00,333 --> 00:02:03,700
+他们奋勇杀敌 立下了不少战功
+
+33
+00:02:03,700 --> 00:02:06,433
+逐渐在乱世中崭露头角
+
+34
+00:02:06,433 --> 00:02:09,400
+这便是宴桃园豪杰三结义
+
+35
+00:02:09,400 --> 00:02:12,133
+斩黄巾英雄首立功的故事
+
+
+</b></pre>
+        </div>
+      </div>
+    </div>
+    <div  class="footer" style="text-align: center" id="example1">
+      <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai1.mp4">1</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai2.mp4">2</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai3.mp4">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    
+      <a href="https://dzcj44.github.io/ymym/pinglun.html">
+        <img
+          src="https://s1.imagehub.cc/images/2024/04/18/90228dd51eb3ea5a8d1f55f89e6d42d4.jpeg"
+          width="60"
+          height="40"
+          vspace="top"
+        />
+    </div>
+  </body>
+</html>
