@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <title>菜鸟教程(runoob.com)</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      video {
+        width: 100%;
+        height: auto;
+      }
+      .row:after {
+        content: "";
+        clear: both;
+        display: block;
+      }
+      [class*="col-"] {
+        float: left;
+        padding: 0px;
+        width: 100%;
+      }
+      @media only screen and (min-width: 600px) {
+        .col-s-12 {
+          width: 8.33%;
+        }
+        .col-s-2 {
+          width: 16.66%;
+        }
+        .col-s-3 {
+          width: 25%;
+        }
+        .col-s-4 {
+          width: 33.33%;
+        }
+        .col-s-5 {
+          width: 41.66%;
+        }
+        .col-s-6 {
+          width: 50%;
+        }
+        .col-s-7 {
+          width: 58.33%;
+        }
+        .col-s-8 {
+          width: 66.66%;
+        }
+        .col-s-9 {
+          width: 75%;
+        }
+        .col-s-10 {
+          width: 83.33%;
+        }
+        .col-s-11 {
+          width: 91.66%;
+        }
+        .col-s-12 {
+          width: 100%;
+        }
+      }
+      @media only screen and (min-width: 768px) {
+        .col-1 {
+          width: 8.33%;
+        }
+        .col-2 {
+          width: 16.66%;
+        }
+        .col-3 {
+          width: 25%;
+        }
+        .col-4 {
+          width: 33.33%;
+        }
+        .col-5 {
+          width: 41.66%;
+        }
+        .col-6 {
+          width: 50%;
+        }
+        .col-7 {
+          width: 58.33%;
+        }
+        .col-8 {
+          width: 66.66%;
+        }
+        .col-9 {
+          width: 75%;
+        }
+        .col-10 {
+          width: 83.33%;
+        }
+        .col-11 {
+          width: 91.66%;
+        }
+        .col-12 {
+          width: 100%;
+        }
+      }
+      html {
+        font-family: "Lucida Sans", sans-serif;
+      }
+      .header {
+        background-color: #9933cc;
+        color: #ffffff;
+        padding: 0px;
+      }
+      .menu ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      .menu li {
+        padding: 8px;
+        margin-bottom: 7px;
+        background-color: #33b5e5;
+        color: #ffffff;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      .menu li:hover {
+        background-color: #0099cc;
+      }
+      .aside {
+        background-color: #33b5e5;
+        padding: px;
+        color: #ffffff;
+        text-align: center;
+        font-size: 14px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      }
+      .footer {
+        background-color: #0099cc;
+        color: #ffffff;
+        text-align: center;
+        font-size: 12px;
+        padding: 15px;
+      }
+      .div2 {
+        width: 850px;
+        height: 1700px;
+        line-height: 50px;
+        text-align: left;
+        background-color: orange;
+        position: relative;
+        top: 0px;
+        /*left: 150px;*/
+      }
+      #example1 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/26/0b726a6b135c6ace3c95ba2becab27ad.jpeg);
+        background-size: 1500px 1600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      #example2 {
+        background-image: url(https://s1.imagehub.cc/images/2024/04/26/0b726a6b135c6ace3c95ba2becab27ad.jpeg);
+        background-size: 1500px 1600px;
+        background-repeat: repeat;
+        padding: 15px;
+      }
+      .button {
+    background-color: #4CAF50; /* Green */
+    border: 1px solid green;
+    color: white;
+    padding: 15px 32px;		;
+}
+
+.button:hover {
+    background-color: #3e8e41;
+}
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 420px;
+        background-color: #fbfbfbd1;
+        border: 1px solid #555;
+      }
+
+      li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+      }
+
+      li {
+        text-align: center;
+        border-bottom: 1px solid #555;
+      }
+
+      li:last-child {
+        border-bottom: none;
+      }
+
+      li a.active {
+        background-color: #c1f9c3;
+        color: rgba(0, 0, 0, 0.915);
+      }
+
+      li a:hover:not(.active) {
+        background-color: #c1f9c3;
+        color: rgb(19, 1, 1);
+      }
+      ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+
+ul.pagination li {display: inline;}
+
+ul.pagination li a {
+    color: black;
+    float: left ;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+ul.pagination li a.active {
+    background-color: #fcfcfcce;
+    color: white;
+    border: 1px solid #fefffea1;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #ddd;}
+hr {
+            /* 设置到边框的距离 */
+            margin-top: -30px;
+        }
+        .vi {
+            /* 设置视频占比 */
+            width: 50% ;
+            /* 设置左边距离 */
+            margin-left: 60px;
+        }
+    </style>
+  </head>
+  <body id="example1">
+      <!-- 插入图片 文字-->
+      <h2><pre><!---->
+        <!-- 图片地址 相对路径，需要自己添加视频与图片 --><div class"header" >
+<img src="https://s1.imagehub.cc/images/2024/05/08/0e811a6b8f2721bdc9433037e00e581c.md.jpeg"width="150"height="150"align="center">    <input type="text" placeholder="怎么用HTML写出网页">    <img src="https://s1.imagehub.cc/images/2024/04/28/73935a5d58ae825110b858fc8cceecf8.png" align="center"width="150"height="150"> 回到首页      <img src="https://s1.imagehub.cc/images/2024/04/28/f6dc33400dc5aa5e9c96703635dccc42.png" align="center" width="150"height="150">下载客户端     <img src="https://s1.imagehub.cc/images/2024/04/28/524258c926d423c10256cb2df4609b66.png" align="center"width="150"height="150"> 创作中心       <img src="https://s1.imagehub.cc/images/2024/04/28/3c290004cdff23bac7054bb6d9c51d20.png" align="center" width="150"height="150">消息
+
+</div>           </pre></h2><hr>
+<!-- 插入视频                                        自动播放  循环播放  视频自动静音播放  基本标签-->
+
+    <div class="row" id="example1">
+      <div class="col-6 col-s-9" id="example1">
+        <h1>老人与海</h1>
+        <p>
+是美国作家海明威于1951年在古巴写的一篇中篇小说，于1952年出版。
+        </p>
+        <video height="1400" width="400" controls>
+          <source src="https://dzcj44.github.io/ymym/laorenyuhai1.mp4" type="video/mp4" />
+          <source src="mov_bbb.ogg" type="video/ogg" />
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <div class="col-3 col-s-12">
+        <div class="div2" style="height:600px;overflow-y:auto"id="example1">
+            <p style="font-size: 20px" class="breakword"  >
+                <b>
+                  那老人独驾轻舟，在墨西哥湾暖流里捕鱼，如今出海已有八十四天，仍是一鱼不获。开始的四十天，
+                  有个男孩跟他同去。可是过了四十天还捉不到鱼，那男孩的父母便对他说，那老头子如今不折不扣地成了晦
+                  气星，那真是最糟的厄运，于是男孩听了父母的话，到另一条船上去，那条船第一个星期捕到三尾好鱼。他
+                  看见老人每日空船回来，觉得难过，每每下去帮他的忙，或拿绳圈，或拿鱼钩鱼叉，以及卷在桅上的布帆。
+                  那帆用面粉袋子补成一块块的，卷起来，就像是一面长败之旗。老人瘦削而憔悴，颈背皱纹深刻。热带海上
+                  阳光的反射引起善性的皮癌，那种褐色的疮疱便长满了两颊，两手时常用索拉扯大鱼，也留下深折的瘢痕。
+                  这些瘢痕却都不新，只像无鱼的沙漠里风蚀留除了眼睛，他身上处处都显得苍老。可是他的眼睛跟海水一样
+                  颜色，活泼而坚定。男孩和他爬上了小艇拖靠的海岸，对他说：“桑地雅哥，我又可以跟你一同去了。我们
+                  赚了点钱。”老人曾教男孩捕鱼，男孩因此爱他。                                              </b></p>
+                  <p style="font-size: 20px" class="breakword"  ><b>“不行，”老人说，“你跟上了一条好运的船。就跟下去吧。</b></p>
+                  <p style="font-size: 20px" class="breakword"  ><b>“可是别忘了：有一次你一连八十七天没捉到鱼，后来我们连着三个星期，天天都捉到大鱼。”</b></p>
+                    <p style="font-size: 20px" class="breakword"  ><b>“我记得，”老人说，“我晓得，你并不是因为不相信我才离开我。”</b></p>
+                      <p style="font-size: 20px" class="breakword"  ><b> “是爸爸叫我走的。我是小孩，只好听他的话。”</b></p>
+                        <p style="font-size: 20px" class="breakword"  ><b>“我晓得，”老人说，“那是应该的。” “他不大有信心。”</b></p>
+                          <p style="font-size: 20px" class="breakword"  ><b>“自然了，”老人说，“可是我们有信心，对不对？”</b></p>
+                            <p style="font-size: 20px" class="breakword"  ><b>“对，”男孩说，“我请你去平台上喝杯啤酒，好不好？喝过了，我们再把这些东西拿回去。”</b></p>
+                              <p style="font-size: 20px" class="breakword"  ><b> “好呀，打鱼的还用客气吗！”老人说。</b></p>
+                                <p style="font-size: 20px" class="breakword"  ><b>他们坐在平台上，许多渔夫就拿老头子寻开心，可是他并不生气。年纪大些的渔夫只是望着他，觉得难过。
+                  可是他们不动声色，却斯文地谈论暖流，谈论他们投索的深度、稳定的好天气，和其他的经历。这一天，满载
+                  的渔人已经归来，正剖好马林鱼，横放在两条木板子上，每条板端由两个渔人蹒跚地抬着，走向鱼库，再等冰
+                  车载去哈瓦那的市场。有的捕到鲨鱼，就运到对湾的鲨鱼厂去，把它挂上了滑车的钓钩，去了肝，割了鳍，刮
+                  了皮，最后把鱼肉切成一条条的，用盐腌起,
+                  每有东风，对湾的鲨鱼厂就会飘来一股腥气；可是今天只有一丝
+                  淡淡的气味，因为风向已由东转北，又渐渐平息，平台上阳光晴好。</b></p>
+                  <p style="font-size: 20px" class="breakword"  ><b>“桑地雅哥。”男孩唤他。 “嗯。”老人应道。他正端着杯子，追想往日。</b></p>
+                    <p style="font-size: 20px" class="breakword"  ><b>“我去弄点沙丁鱼给你明天用，好不好？”</b></p>
+                      <p style="font-size: 20px" class="breakword"  ><b>“算了。去打棒球吧。我还能划船，罗吉略可以撒网。</b></p>
+                        <p style="font-size: 20px" class="breakword"  ><b>“我真想去。就是不能跟你去打鱼，我也要帮你点什么忙。”</b></p>
+                          <p style="font-size: 20px" class="breakword"  ><b>“你请我喝了啤酒，”老人说，“你已经是个大人了。”</b></p>
+                            <p style="font-size: 20px" class="breakword"  ><b>“你第一次带我上船，我有多大了？”</b></p>
+                              <p style="font-size: 20px" class="breakword"  ><b>“五岁。你差点送了命，当时我太早把鱼拉了上来，它几乎把船撞碎。你还记得吗？”</b></p>
+                </b>
+              </p1>
+        </div>
+      </div>
+    </div>
+    <div  class="footer" style="text-align: center" id="example1">
+      <ul class="pagination">
+        <li><a href="#">«</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai1.mp4">1</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai2.mp4">2</a></li>
+        <li><a href="https://dzcj44.github.io/ymym/laorenyuhai3.mp4">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li><a href="#">6</a></li>
+        <li><a href="#">7</a></li>
+        <li><a href="#">»</a></li>
+      </ul>
+    
+      <a href="C:\Users\袁明\Desktop\22-1.html">
+        <img
+          src="https://s1.imagehub.cc/images/2024/04/18/90228dd51eb3ea5a8d1f55f89e6d42d4.jpeg"
+          width="60"
+          height="40"
+          vspace="top"
+        />
+    </div>
+  </body>
+</html>
