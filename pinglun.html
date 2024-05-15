@@ -3,6 +3,12 @@
   <head>
     <link rel="stylesheet" href="留言板.css" />
     <style>
+      #example3 {
+        background-image: url(https://s1.imagehub.cc/images/2024/05/16/a3e74ffa388028b7c9340ae794b0c4a9.jpeg);
+        background-size: 1750px 960px;
+        background-repeat: no-repeat;
+        padding: 0px;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -55,7 +61,7 @@
       /* 输入框背景色修改 */
       textarea,
       input[type="text"] {
-        background-color: rgb(117, 223, 188);
+        background-color: rgba(209, 248, 235, 0.637);
       }
 
       input[type="text"] {
@@ -142,65 +148,72 @@
   </head>
 
   <body>
-    <i>
-      <h1>评论区</h1>
-    </i>
-    <hr />
-    <ul class="a"></ul>
+    <div id="example3">
+      <i>
+        <h1>评论区</h1>
+      </i>
+      <hr />
+      <ul class="a"></ul>
 
-    <div class="container">
-      <p class="bth">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;提交文件<input
-          type="file"
+      <div class="container">
+        <p class="bth">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;提交文件<input
+            type="file"
+          />
+        </p>
+        <input
+          type="text"
+          placeholder="请输入昵称:"
+          name="name"
+          id="nameInput"
         />
-      </p>
-      <input type="text" placeholder="请输入昵称:" name="name" id="nameInput" />
-      <textarea
-        placeholder="请留言"
-        name="pwd"
-        id="textarea"
-        cols="36"
-        rows="16"
-      ></textarea>
-      <br />
-      <button class="sub">发布</button>
-    </div>
-    <script>
-      var btn = document.querySelector("button.sub");
-      var text = document.querySelector("#textarea");
-      var nameInput = document.querySelector("#nameInput");
-      var ul = document.querySelector("ul");
-      btn.onclick = function () {
-        if (text.value === "" || nameInput.value === "") {
-          alert("你没有输入内容或昵称，不能进行此操作");
-          return false;
-        } else {
-          var li = document.createElement("li");
-          var date = new Date();
-          var dateString = date.toLocaleString();
-          li.innerHTML =
-            '<span class="name">' +
-            nameInput.value +
-            '</span><span class="date">' +
-            dateString +
-            '</span><br><span class="message">' +
-            text.value +
-            "</span>";
-          var button = document.createElement("button");
-          button.className = "remove";
-          button.innerHTML = "消除记录";
-          button.onclick = function () {
-            ul.removeChild(this.parentNode);
-          };
-          li.appendChild(button);
-          ul.appendChild(li);
-          text.value = "";
-          nameInput.value = "";
-        }
-      };
+        <textarea
+          placeholder="请留言"
+          name="pwd"
+          id="textarea"
+          cols="36"
+          rows="16"
+        ></textarea>
+        <br />
+        <button class="sub">发布</button>
+      </div>
+      <script>
+        var btn = document.querySelector("button.sub");
+        var text = document.querySelector("#textarea");
+        var nameInput = document.querySelector("#nameInput");
+        var ul = document.querySelector("ul");
+        btn.onclick = function () {
+          if (text.value === "" || nameInput.value === "") {
+            alert("你没有输入内容或昵称，不能进行此操作");
+            return false;
+          } else {
+            var li = document.createElement("li");
+            var date = new Date();
+            var dateString = date.toLocaleString();
+            li.innerHTML =
+              '<span class="name">' +
+              nameInput.value +
+              '</span><span class="date">' +
+              dateString +
+              '</span><br><span class="message">' +
+              text.value +
+              "</span>";
+            var button = document.createElement("button");
+            button.className = "remove";
+            button.innerHTML = "消除记录";
+            button.onclick = function () {
+              ul.removeChild(this.parentNode);
+            };
+            li.appendChild(button);
+            ul.appendChild(li);
+            text.value = "";
+            nameInput.value = "";
+          }
+        };
 
-      prompt("你好,欢迎进入留言板");
-      prompt("亲，留言完记得点击按钮上传");
-    </script>
+        prompt("你好,欢迎进入留言板");
+        prompt("亲，留言完记得点击按钮上传");
+      </script>
+    </div>
   </body>
 </html>
